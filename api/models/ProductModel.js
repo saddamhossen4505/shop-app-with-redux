@@ -33,7 +33,7 @@ const productSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
-    sales_price: {
+    sale_price: {
       type: Number,
       default: null,
     },
@@ -50,14 +50,17 @@ const productSchema = mongoose.Schema(
     categories: {
       type: [mongoose.Schema.Types.ObjectId],
       ref: "Category",
+      default: [],
     },
     tags: {
       type: [mongoose.Schema.Types.ObjectId],
       ref: "Tag",
+      default: [],
     },
     brands: {
-      type: [mongoose.Schema.Types.ObjectId],
+      type: mongoose.Schema.Types.ObjectId,
       ref: "Brand",
+      default: null,
     },
     status: {
       type: Boolean,
