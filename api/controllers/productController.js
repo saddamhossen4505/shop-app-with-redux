@@ -170,3 +170,5 @@ export const updateSingleProduct = async (req, res, next) => {
     next(error);
   }
 };
+
+
