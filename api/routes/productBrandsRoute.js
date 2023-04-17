@@ -5,6 +5,7 @@ import {
   getAllBrands,
   getSingleBrand,
   updateSingleBrand,
+  updateBrandStatus,
 } from "../controllers/productBrandController.js";
 import { productBrandsMulter } from "../utils/multer.js";
 
@@ -16,8 +17,9 @@ router.get("/brand", getAllBrands);
 router.post("/brand", productBrandsMulter, createBrand);
 router.get("/brand/:id", getSingleBrand);
 router.delete("/brand/:id", deleteSingleBrand);
-router.put("/brand/:id", updateSingleBrand);
-router.patch("/brand/:id", updateSingleBrand);
+router.put("/brand/:id", productBrandsMulter, updateSingleBrand);
+router.patch("/brand/:id", productBrandsMulter, updateSingleBrand);
+router.patch("/brand-status/:id", updateBrandStatus);
 
 // Export.
 export default router;

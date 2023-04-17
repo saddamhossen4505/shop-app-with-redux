@@ -1,0 +1,39 @@
+.modal_view_area {
+  display: flex;
+  gap: 10px;
+
+  .product_photo {
+    width: 450px;
+    img {
+      width: 450px;
+    }
+  }
+
+  .product_details {
+    .product_title {
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    .view_pricing {
+      display: flex;
+      gap: 20px;
+      font-size: 20px;
+
+      .regular {
+        text-decoration: line-through;
+      }
+      .sale {
+        font-weight: bolder;
+      }
+    }
+
+    .view_btn {
+      button {
+        border-radius: 0px;
+        background-color: #fa6a13;
+        border-color: #fa6a13;
+      }
+    }
+  }
+}

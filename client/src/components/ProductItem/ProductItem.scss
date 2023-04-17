@@ -1,0 +1,35 @@
+.product_items {
+  width: 32%;
+  margin-bottom: 10px;
+
+  .pricing {
+    display: flex;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: bolder;
+
+    .regular {
+      text-decoration: line-through;
+      font-weight: 200;
+    }
+  }
+
+  .product_btn {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+
+    .cart_btn {
+      background-color: #fa6a13;
+      border-color: #fa6a13;
+      width: 50%;
+      font-size: 16px;
+    }
+    button {
+      border-radius: 0px;
+      width: 50%;
+      font-size: 16px;
+    }
+  }
+}

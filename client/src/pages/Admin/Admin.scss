@@ -1,0 +1,50 @@
+.admin_page {
+  .admin_menu {
+    ul {
+      li {
+        background-color: #f9f9f9;
+        margin-bottom: 10px;
+        transition: all ease-in 0.3s;
+        padding: 5px 0px;
+        &:hover {
+          background-color: #ccc;
+        }
+        a {
+          font-size: 14px;
+          color: #444;
+          padding: 10px 20px;
+        }
+      }
+    }
+  }
+
+  .table_content {
+    .table_content_header {
+      display: flex;
+      justify-content: space-between;
+
+      h2 {
+        font-size: 20px;
+        font-weight: bold;
+        color: #777;
+        font-style: italic;
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: none;
+        background-color: #e9e9e9;
+        padding: 10px;
+        transition: all ease-in 0.3s;
+        &:hover {
+          background-color: #ccc;
+        }
+        .icon {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

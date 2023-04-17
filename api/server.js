@@ -13,6 +13,9 @@ import errorHandeler from "./utils/errorHandeler.js";
 const app = express();
 dotenv.config();
 
+// Init Static-Folder.
+app.use(express.static("public"));
+
 // Use Middlewares.
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -22,10 +25,10 @@ app.use(cors());
 const PORT = process.env.PORT || 9090;
 
 // Routes.
-app.use("/api/v1/product", productRoute);
 app.use("/api/v1/product", productCategoryRoute);
 app.use("/api/v1/product", productBrandsRoute);
 app.use("/api/v1/product", productTagRoute);
+app.use("/api/v1/product", productRoute);
 
 // ErrorHandeler.
 app.use(errorHandeler);

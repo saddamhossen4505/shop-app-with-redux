@@ -7,6 +7,10 @@ import Admin from "../pages/Admin/Admin";
 import SingleProduct from "../pages/SingleProduct/SingleProduct";
 import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
+import Brands from "../components/Brands/Brands";
+import Tags from "../components/Tags/Tags";
+import Categories from "../components/Categories/Categories";
+import Products from "../components/Products/Products";
 
 // Create PublicRoute.
 const publicRoute = createBrowserRouter([
@@ -19,27 +23,45 @@ const publicRoute = createBrowserRouter([
         element: <Shop />,
       },
       {
-        path: "/cart",
+        path: "cart",
         element: <Cart />,
       },
       {
-        path: "/wishlist",
+        path: "wishlist",
         element: <WishList />,
       },
       {
-        path: "/admin",
+        path: "admin",
         element: <Admin />,
+        children: [
+          {
+            path: "brand",
+            element: <Brands />,
+          },
+          {
+            path: "tag",
+            element: <Tags />,
+          },
+          {
+            path: "category",
+            element: <Categories />,
+          },
+          {
+            path: "products",
+            element: <Products />,
+          },
+        ],
       },
       {
         path: "/:slug",
         element: <SingleProduct />,
       },
       {
-        path: "/about",
+        path: "about",
         element: <About />,
       },
       {
-        path: "/contact",
+        path: "contact",
         element: <Contact />,
       },
     ],
