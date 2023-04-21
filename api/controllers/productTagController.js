@@ -1,3 +1,4 @@
+import { createSlug } from "../helper/createSlug.js";
 import Tag from "../models/TagModel.js";
 
 // Get AllTagController.
@@ -17,15 +18,14 @@ export const getAllTags = async (req, res, next) => {
 // Create TagController.
 export const createTag = async (req, res, next) => {
   try {
-    const { name, slug } = req.body;
-
-    const data = await Tag.create({
+    const { name } = req.body;
+    const tag = await Tag.create({
       name,
-      slug,
+      slug: createSlug(name),
     });
 
     res.status(200).json({
-      tags: data,
+      tags: tag,
       message: "Tag created success",
     });
   } catch (error) {
@@ -68,12 +68,12 @@ export const deleteSingleTag = async (req, res, next) => {
 export const updateSingleTag = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const { name, slug } = req.body;
+    const { name } = req.body;
     const data = await Tag.findByIdAndUpdate(
       id,
       {
         name,
-        slug,
+        slug: createSlug(name),
       },
       { new: true }
     );
@@ -81,6 +81,28 @@ export const updateSingleTag = async (req, res, next) => {
     res.status(200).json({
       tags: data,
       message: "Single tag updated success",
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// Update-SingleTag-Status Controller.
+export const updateSingleTagStatus = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const { status } = req.body;
+    const data = await Tag.findByIdAndUpdate(
+      id,
+      {
+        status,
+      },
+      { new: true }
+    );
+
+    res.status(200).json({
+      tags: data,
+      message: "Single tag status updated success",
     });
   } catch (error) {
     next(error);

@@ -14,7 +14,7 @@ const app = express();
 dotenv.config();
 
 // Init Static-Folder.
-app.use(express.static("public"));
+app.use(express.static("api/public"));
 
 // Use Middlewares.
 app.use(express.json());

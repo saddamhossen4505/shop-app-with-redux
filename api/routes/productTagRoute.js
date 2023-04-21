@@ -5,6 +5,7 @@ import {
   getAllTags,
   getSingleTag,
   updateSingleTag,
+  updateSingleTagStatus,
 } from "../controllers/productTagController.js";
 
 // Init Router.
@@ -17,6 +18,7 @@ router.get("/tag/:id", getSingleTag);
 router.delete("/tag/:id", deleteSingleTag);
 router.put("/tag/:id", updateSingleTag);
 router.patch("/tag/:id", updateSingleTag);
+router.patch("/tag-status/:id", updateSingleTagStatus);
 
 // Export.
 export default router;

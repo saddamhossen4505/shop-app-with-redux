@@ -83,8 +83,6 @@ export const updateSingleBrand = async (req, res, next) => {
     if (req.file?.filename) {
       photo = req.file.filename;
       unlinkSync(`api/public/brandsPhoto/${oldData.photo}`);
-    } else {
-      photo = oldData.photo;
     }
 
     const brand = await Brand.findByIdAndUpdate(
